@@ -1,12 +1,14 @@
 import React from "react";
+import "./Jumbotron.css";
 
-const Jumbotron = ({ children }) => (
-  <div
-    style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
-    className="jumbotron"
-  >
-    {children}
-  </div>
+const Jumbotron = () => (
+  <div className="jumbotron">
+  <h1 className="text-center">
+    <strong>
+      <i className="fa fa-newspaper-o"></i> New York Times Search</strong>
+  </h1>
+</div>
+
 );
 
 export default Jumbotron;

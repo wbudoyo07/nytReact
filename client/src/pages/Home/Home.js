@@ -1,9 +1,9 @@
 import React from "react";
-import "./NoMatch.css";
+import "./Home.css";
 
-const NoMatch = () => (
+const Home = () => (
     <div>
-    <h1>404 Page Not Found</h1>
+    <h1>404 Page Not FoasdadHOMEund</h1>
     <h1>
       <span role="img" aria-label="Face With Rolling Eyes Emoji">
         🙄
@@ -12,4 +12,4 @@ const NoMatch = () => (
     </div>
 );
 
-export default NoMatch;
+export default Home;
