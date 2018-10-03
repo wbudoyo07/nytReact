@@ -1,15 +1,43 @@
-import React from "react";
+import React, { Component } from "react";
+import API from "../../utils/API";
+import Jumbotron from "../../components/Jumbotron"
+import Form from "../../components/Form";
 import "./Home.css";
 
-const Home = () => (
-    <div>
-    <h1>404 Page Not FoasdadHOMEund</h1>
-    <h1>
-      <span role="img" aria-label="Face With Rolling Eyes Emoji">
-        🙄
-      </span>
-    </h1>
-    </div>
-);
+class Articles extends Component {
+    state = {
+        articles: [],
+        title: "",
+        date: "",
+        url: "",
+    };
 
-export default Home;
+    componentDidMount() {
+        this.loadArticles();
+    };
+
+    loadArticles = () => {
+        API.getArticles()
+        .then(res => 
+            this.setState(
+                {
+                    articles: res.data,
+                    title: "",
+                    data: "",
+                    url: ""
+                }
+                ))
+                .catch(err => console.log(err));
+    };
+
+    render() {
+        return (
+            <div>
+         <Jumbotron />
+         <Form />
+            </div>
+        );
+    }
+}
+
+export default Articles;
