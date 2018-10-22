@@ -8,7 +8,6 @@ const Jumbotron = () => (
       <i className="fa fa-newspaper-o"></i> New York Times Search</strong>
   </h1>
 </div>
-
 );
 
 export default Jumbotron;

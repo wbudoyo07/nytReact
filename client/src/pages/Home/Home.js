@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import Jumbotron from "../../components/Jumbotron"
 import Form from "../../components/Form";
+import Results from "../../components/Results";
 import "./Home.css";
 
 class Articles extends Component {
@@ -12,29 +13,21 @@ class Articles extends Component {
         url: "",
     };
 
-    componentDidMount() {
-        this.loadArticles();
-    };
-
-    loadArticles = () => {
-        API.getArticles()
-        .then(res => 
-            this.setState(
-                {
-                    articles: res.data,
-                    title: "",
-                    data: "",
-                    url: ""
-                }
-                ))
-                .catch(err => console.log(err));
+    handleFormSubmit = event => {
+        event.prevent.Default();
+       
     };
 
     render() {
         return (
             <div>
-         <Jumbotron />
+         <Jumbotron 
+         value = {this.state.title}
+         onChange = {this.handleInputChange}
+         />
          <Form />
+         <br/>
+         <Results />
             </div>
         );
     }
